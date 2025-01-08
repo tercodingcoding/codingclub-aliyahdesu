@@ -15,6 +15,8 @@ Website ini akan memiliki fitur untuk memesan commission untuk gambar. Berikut a
 ### 2. Fitur Utama
 
 - **Halaman Utama**: Menampilkan informasi tentang layanan commission dan contoh karya.
+
+  Belum fix:
 - **Formulir Pemesanan**: Pengguna dapat mengisi formulir untuk memesan commission, termasuk detail seperti jenis gambar, deskripsi, dan preferensi lainnya.
 - **Halaman Galeri**: Menampilkan galeri karya yang telah selesai.
 - **Halaman Profil Pengguna**: Pengguna dapat melihat dan mengelola pesanan mereka.
