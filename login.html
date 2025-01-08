@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Catatan: Tailwind CSS adalah framework CSS yang memungkinkan Anda untuk dengan cepat membangun antarmuka web yang responsif dan modern. -->
+</head>
+<!-- Untuk Edit warna boleh sesuaikan pada bagian from purple-400 to-pink-300. ini untuk mengatur gradiasi dari kiri ke kanan -->
+
+<body class="flex items-center justify-center min-h-screen bg-gradient-to-r from-purple-400 to-pink-300">
+    <!-- Catatan: class="flex items-center justify-center min-h-screen bg-gradient-to-r from-purple-400 to-pink-300" -->
+    <!-- - flex: Menggunakan Flexbox untuk tata letak. -->
+    <!-- - items-center: Menyelaraskan item secara vertikal di tengah. -->
+    <!-- - justify-center: Menyelaraskan item secara horizontal di tengah. -->
+    <!-- - min-h-screen: Mengatur tinggi minimum elemen agar sesuai dengan tinggi layar. -->
+    <!-- - bg-gradient-to-r: Membuat latar belakang gradien dari kiri ke kanan. -->
+    <!-- - from-purple-400 to-pink-300: Mengatur warna gradien dari ungu ke pink. -->
+
+    <div class="flex flex-col items-center">
+        <!-- Catatan: class="flex flex-col items-center" -->
+        <!-- - flex: Menggunakan Flexbox untuk tata letak. -->
+        <!-- - flex-col: Mengatur item dalam kolom. -->
+        <!-- - items-center: Menyelaraskan item secara horizontal di tengah. -->
+
+        <div class="flex justify-center mb-4">
+            <img src="" alt="Logo" class="h-16 w-16 rounded-full">
+            <!-- Catatan: class="h-16 w-16 rounded-full" -->
+            <!-- - h-16: Mengatur tinggi gambar menjadi 4rem (64px). -->
+            <!-- - w-16: Mengatur lebar gambar menjadi 4rem (64px). -->
+            <!-- - rounded-full: Membuat gambar menjadi lingkaran. -->
+            <!-- Ganti src="" dengan URL gambar logo -->
+        </div>
+
+        <div class="bg-purple-700 rounded-lg p-8 shadow-lg w-96">
+            <!-- Catatan: class="bg-purple-700 rounded-lg p-8 shadow-lg w-96" -->
+            <!-- - bg-purple-700: Mengatur latar belakang elemen menjadi ungu. -->
+            <!-- - rounded-lg: Membuat sudut elemen menjadi bulat. -->
+            <!-- - p-8: Menambahkan padding sebesar 2rem (32px). -->
+            <!-- - shadow-lg: Menambahkan bayangan besar pada elemen. -->
+            <!-- - w-96: Mengatur lebar elemen menjadi 24rem (384px). -->
+
+            <h2 class="text-center text-white text-xl font-bold mb-6">Login Form</h2>
+            <!-- Catatan: class="text-center text-white text-xl font-bold mb-6" -->
+            <!-- - text-center: Menyelaraskan teks di tengah. -->
+            <!-- - text-white: Mengatur warna teks menjadi putih. -->
+            <!-- - text-xl: Mengatur ukuran teks menjadi ekstra besar. -->
+            <!-- - font-bold: Membuat teks menjadi tebal. -->
+            <!-- - mb-6: Menambahkan margin bawah sebesar 1.5rem (24px). -->
+
+            <div class="flex justify-between mb-6">
+                <button class="bg-purple-500 text-white px-4 py-2 rounded-lg w-1/2 mr-1">Login</button>
+                <button class="bg-gray-300 text-gray-600 px-4 py-2 rounded-lg w-1/2 ml-1">Signup</button>
+                <!-- Catatan: class="bg-purple-500 text-white px-4 py-2 rounded-lg w-1/2 mr-1" -->
+                <!-- - bg-purple-500: Mengatur latar belakang tombol menjadi ungu. -->
+                <!-- - text-white: Mengatur warna teks tombol menjadi putih. -->
+                <!-- - px-4: Menambahkan padding horizontal sebesar 1rem (16px). -->
+                <!-- - py-2: Menambahkan padding vertikal sebesar 0.5rem (8px). -->
+                <!-- - rounded-lg: Membuat sudut tombol menjadi bulat. -->
+                <!-- - w-1/2: Mengatur lebar tombol menjadi setengah dari elemen induk. -->
+                <!-- - mr-1: Menambahkan margin kanan sebesar 0.25rem (4px). -->
+                <!-- Catatan: Anda dapat mengubah teks tombol dan warnanya sesuai kebutuhan -->
+            </div>
+
+            <form action="process-login.php" method="POST">
+                <div class="mb-4">
+                    <input type="email" name="email" placeholder="Email Address"
+                        class="w-full px-4 py-2 rounded-lg bg-gray-100 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500">
+                    <!-- Catatan: class="w-full px-4 py-2 rounded-lg bg-gray-100 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500" -->
+                    <!-- - w-full: Mengatur lebar input menjadi 100%. -->
+                    <!-- - px-4: Menambahkan padding horizontal sebesar 1rem (16px). -->
+                    <!-- - py-2: Menambahkan padding vertikal sebesar 0.5rem (8px). -->
+                    <!-- - rounded-lg: Membuat sudut input menjadi bulat. -->
+                    <!-- - bg-gray-100: Mengatur latar belakang input menjadi abu-abu terang. -->
+                    <!-- - border border-gray-300: Menambahkan border abu-abu pada input. -->
+                    <!-- - focus:outline-none: Menghilangkan outline default saat input fokus. -->
+                    <!-- - focus:ring-2 focus:ring-purple-500: Menambahkan efek ring ungu saat input fokus. -->
+                    <!-- Pastikan untuk memvalidasi input email di sisi server -->
+                </div>
+
+                <div class="mb-4">
+                    <input type="password" name="password" placeholder="Password"
+                        class="w-full px-4 py-2 rounded-lg bg-gray-100 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500">
+                    <!-- Catatan: class="w-full px-4 py-2 rounded-lg bg-gray-100 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500" -->
+                    <!-- - w-full: Mengatur lebar input menjadi 100%. -->
+                    <!-- - px-4: Menambahkan padding horizontal sebesar 1rem (16px). -->
+                    <!-- - py-2: Menambahkan padding vertikal sebesar 0.5rem (8px). -->
+                    <!-- - rounded-lg: Membuat sudut input menjadi bulat. -->
+                    <!-- - bg-gray-100: Mengatur latar belakang input menjadi abu-abu terang. -->
+                    <!-- - border border-gray-300: Menambahkan border abu-abu pada input. -->
+                    <!-- - focus:outline-none: Menghilangkan outline default saat input fokus. -->
+                    <!-- - focus:ring-2 focus:ring-purple-500: Menambahkan efek ring ungu saat input fokus. -->
+                    <!-- Pastikan untuk memvalidasi input password di sisi server -->
+                </div>
+
+                <button type="submit"
+                    class="bg-purple-500 text-white px-4 py-2 w-full rounded-lg hover:bg-purple-600">Login</button>
+                <!-- Catatan: class="bg-purple-500 text-white px-4 py-2 w-full rounded-lg hover:bg-purple-600" -->
+                <!-- - bg-purple-500: Mengatur latar belakang tombol menjadi ungu. -->
+                <!-- - text-white: Mengatur warna teks tombol menjadi putih. -->
+                <!-- - px-4: Menambahkan padding horizontal sebesar 1rem (16px). -->
+                <!-- - py-2: Menambahkan padding vertikal sebesar 0.5rem (8px). -->
+                <!-- - w-full: Mengatur lebar tombol menjadi 100%. -->
+                <!-- - rounded-lg: Membuat sudut tombol menjadi bulat. -->
+                <!-- - hover:bg-purple-600: Mengubah latar belakang tombol menjadi ungu lebih gelap saat di-hover. -->
+                <!-- Anda dapat menambahkan fitur 'Remember Me' atau 'Forgot Password' jika diperlukan -->
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
