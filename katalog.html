@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Katalog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="min-h-screen bg-gradient-to-r from-purple-400 to-pink-300 flex flex-col items-center text-white">
+    <header class="w-full flex items-center justify-between p-4 bg-purple-700 shadow-lg">
+        <div class="flex items-center space-x-4">
+            <img src="https://via.placeholder.com/40" alt="Logo" class="w-10 h-10 rounded-full">
+            <div class="text-white font-bold text-xl">aliyah.desu</div>
+        </div>
+        <nav class="flex space-x-4">
+            <a href="#" class="text-white hover:bg-purple-300 p-2 rounded-lg">Social Media</a>
+            <a href="#" class="text-white hover:bg-purple-300 p-2 rounded-lg">Profile</a>
+        </nav>
+    </header>
+
+    <main class="flex flex-col gap-4 p-4 w-full max-w-6xl mt-8">
+        <div class="flex justify-center">
+            <button
+                class="tab bg-purple-600 focus:bg-white focus:text-purple-600 hover:bg-purple-800 text-white px-6 py-3 rounded-full shadow-lg"
+                data-tab="headshot">Headshot</button>
+            <button
+                class="tab bg-purple-600 focus:bg-white focus:text-purple-600 hover:bg-purple-800 text-white px-6 py-3 rounded-full shadow-lg ml-4"
+                data-tab="bustup">Bust
+                Up</button>
+            <button
+                class="tab bg-purple-600 focus:bg-white focus:text-purple-600 hover:bg-purple-800 text-white px-6 py-3 rounded-full shadow-lg ml-4"
+                data-tab="halfbody">Half
+                Body</button>
+            <button
+                class="tab bg-purple-600 focus:bg-white focus:text-purple-600 hover:bg-purple-800 text-white px-6 py-3 rounded-full shadow-lg ml-4"
+                data-tab="kneeup">Knee
+                Up</button>
+            <button
+                class="tab bg-purple-600 focus:bg-white focus:text-purple-600 hover:bg-purple-800 text-white px-6 py-3 rounded-full shadow-lg ml-4"
+                data-tab="fullbody">Full
+                Body</button>
+        </div>
+        <div id="image-container"
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 transition-all duration-500 ease-in-out">
+            <div
+                class="bg-purple-600 rounded-lg shadow-lg p-4 transform transition-transform duration-500 ease-in-out hover:scale-105">
+                <div class="h-64 bg-gray-200 rounded-lg flex items-center justify-center text-gray-800">Image
+                    Placeholder</div>
+            </div>
+            <div
+                class="bg-purple-600 rounded-lg shadow-lg p-4 transform transition-transform duration-500 ease-in-out hover:scale-105">
+                <div class="h-64 bg-gray-200 rounded-lg flex items-center justify-center text-gray-800">Image
+                    Placeholder</div>
+            </div>
+            <div
+                class="bg-purple-600 rounded-lg shadow-lg p-4 transform transition-transform duration-500 ease-in-out hover:scale-105">
+                <div class="h-64 bg-gray-200 rounded-lg flex items-center justify-center text-gray-800">Image
+                    Placeholder</div>
+            </div>
+        </div>
+    </main>
+    <script>
+        const tabs = document.querySelectorAll('.tab');
+        const imageContainer = document.getElementById('image-container');
+
+        const images = {
+            headshot: ['Image 1', 'Image 2', 'Image 3'],
+            bustup: ['Image 4', 'Image 5', 'Image 6'],
+            halfbody: ['Image 7', 'Image 8', 'Image 9'],
+            kneeup: ['Image 10', 'Image 11', 'Image 12'],
+            fullbody: ['Image 13', 'Image 14', 'Image 15']
+        };
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('tab-selected'));
+                tab.classList.add('tab-selected');
+                const selectedTab = tab.getAttribute('data-tab');
+                updateImages(selectedTab);
+            });
+        });
+
+        function updateImages(tab) {
+            imageContainer.innerHTML = '';
+            images[tab].forEach(image => {
+                const imageDiv = document.createElement('div');
+                imageDiv.className = 'bg-purple-600 rounded-lg shadow-lg p-4 transform transition-transform duration-500 ease-in-out hover:scale-105';
+                imageDiv.innerHTML = `<div class="h-64 bg-gray-200 rounded-lg flex items-center justify-center text-gray-800">${image}</div>`;
+                imageContainer.appendChild(imageDiv);
+            });
+        }
+    </script>
+</body>
+
+</html>
